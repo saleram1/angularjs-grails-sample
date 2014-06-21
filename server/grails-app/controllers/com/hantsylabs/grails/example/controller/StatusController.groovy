@@ -1,24 +1,13 @@
 package com.hantsylabs.grails.example.controller
 
 import grails.converters.JSON
-import grails.plugin.springsecurity.SpringSecurityUtils
+import com.hantsylabs.grails.example.security.Person
 
-import javax.servlet.http.HttpServletResponse
-
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserCache;
 
 class StatusController {
-	
-	def springSecurityService
-	def userCache
 
 	def index() {
-		if(springSecurityService.isLoggedIn()) {
-			render([user:springSecurityService.currentUser] as JSON)
-		}else {
-			response.sendError HttpServletResponse.SC_UNAUTHORIZED
-		}
-	}
-	
+		def person = new Person(username:"test", password:"test123")
+		render([user: person] as JSON)
+	}	
 }

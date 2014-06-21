@@ -50,27 +50,24 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.24'
 		//agent "org.springsource.springloaded:springloaded-core:1.1.3"
-		
-		build "org.fusesource.jansi:jansi:1.11"
-		runtime "org.ebaysf.web:cors-filter:1.0.1"
     }
 
     plugins {
-
-		
         // plugins for the build system only
         build ":tomcat:7.0.47"
 
         // plugins for the compile step
         compile ":scaffolding:2.0.1"
         compile ":cache:1.1.1"
-		compile ":spring-security-core:2.0-RC3"
+		compile ":httplogger:1.1"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.6" // or ":hibernate4:4.1.11.4"
         runtime ":database-migration:1.3.8"
         runtime ":jquery:1.10.2"
         runtime ":resources:1.2.1"
+		runtime ":cors:1.1.6"
+		
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"

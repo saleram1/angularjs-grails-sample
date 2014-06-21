@@ -116,6 +116,11 @@ environments {
 }
 
 // log4j configuration
+log4j = { root ->
+    root.level = org.apache.log4j.Level.INFO
+}
+
+/*
 log4j = {
 	// Example of changing the log pattern for the default console appender:
 	//
@@ -137,41 +142,8 @@ log4j = {
 	debug 	'com.hantsylabs',
 			'org.springframework.security',
 			'grails.plugin.springsecurity'
+	info    'grails.app', 'grails.jobs'
 }
+*/
 
-
-// Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.hantsylabs.grails.example.security.Person'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.hantsylabs.grails.example.security.PersonAuthority'
-grails.plugin.springsecurity.authority.className = 'com.hantsylabs.grails.example.security.Authority'
-grails.plugin.springsecurity.requestMap.className = 'com.hantsylabs.grails.example.security.Requestmap'
-grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
-grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                              ['permitAll'],
-	'/index':                         ['permitAll'],
-	'/index.gsp':                     ['permitAll'],
-	'/**/js/**':                      ['permitAll'],
-	'/**/css/**':                     ['permitAll'],
-	'/**/images/**':                  ['permitAll'],
-	'/**/favicon.ico':                ['permitAll']
-	]
-grails.plugin.springsecurity.interceptUrlMap = [
-	'/app/**':             ['permitAll'],
-	'/**/js/**':          ['permitAll'],
-	'/**/css/**':         ['permitAll'],
-	'/**/images/**':      ['permitAll'],
-	'/**/favicon.ico':    ['permitAll'],
-	'/login/**':          ['permitAll'],
-	'/logout/**':         ['permitAll'],
-	'/api/status':          ['permitAll'],
-	'/**':				  ['isFullyAuthenticated()']
-	]
-
-grails.plugin.springsecurity.useBasicAuth = true
-//grails.plugin.springsecurity.basic.realmName = "Ralph's Bait and Tackle"
-
-grails.plugin.springsecurity.filterChain.chainMap = [
-//	'/api/**':'JOINED_FILTERS,-exceptionTranslationFilter',
-	'/api/**': 'statelessSecurityContextPersistenceFilter,logoutFilter,authenticationProcessingFilter,customBasicAuthenticationFilter,securityContextHolderAwareRequestFilter,rememberMeAuthenticationFilter,anonymousAuthenticationFilter,basicExceptionTranslationFilter,filterInvocationInterceptor',
-//	'/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
- ]
+cors.headers = ['Access-Control-Allow-Origin': '*']
