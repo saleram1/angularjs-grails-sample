@@ -63,8 +63,8 @@ grails.project.dependency.resolution = {
 
         // plugins for the compile step
         compile ":scaffolding:2.0.1"
-        compile ':cache:1.1.1'
-		compile ":spring-security-core:2.0-RC2"
+        compile ":cache:1.1.1"
+		compile ":spring-security-core:2.0-RC3"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.6" // or ":hibernate4:4.1.11.4"
@@ -74,8 +74,6 @@ grails.project.dependency.resolution = {
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"
-        //runtime ":yui-minify-resources:0.1.5"
-		
-		
+        //runtime ":yui-minify-resources:0.1.5"		
     }
 }
