@@ -9,7 +9,7 @@
 
    
     as = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers']);
-    as.value('version', '1.0.7');
+    as.value('version', '1.0.8');
     as.value('apiUrl', 'http://localhost:8080/angularjs-grails-sample/api');
     as.config(function($routeProvider, $httpProvider) {
         $routeProvider
